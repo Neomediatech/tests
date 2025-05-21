@@ -38,3 +38,9 @@ jobs:
 
       - name: Echo the generated image tag
         run: echo "Attempting to scan image $INPUT_IMAGE_REF"
+
+      - name: echo to file
+        run: echo "blah blah blah" > test.txt
+
+      - name: show dir content
+        run: ls -lah

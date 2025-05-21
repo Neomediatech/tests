@@ -1,9 +1,9 @@
 name: Tests
 
 on:
-  push:
-    branches: [main]
-  pull_request:
+  #push:
+  #  branches: [main]
+  #pull_request:
   workflow_dispatch: # Permette di avviare il workflow manualmente dalla UI di GitHub
 
 jobs:

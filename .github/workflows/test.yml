@@ -5,10 +5,6 @@ on:
     branches: [main]
   pull_request:
 
-env:
-  REPO_LOWER: $(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-  INPUT_IMAGE_REF: ghcr.io/$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]'):latest
-
 jobs:
   build-and-scan:
     runs-on: ubuntu-latest
@@ -30,6 +26,9 @@ jobs:
           REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
           echo "tag=ghcr.io/${REPO_LOWER}:latest" >> $GITHUB_OUTPUT
           #echo "tag=ghcr.io/${REPO_LOWER}:${{ github.sha }}" >> $GITHUB_OUTPUT
+
+      - name: Set INPUT_IMAGE_REF
+        run: echo "INPUT_IMAGE_REF=${{ steps.vars.outputs.tag }}" >> $GITHUB_ENV
 
       #- name: Build Docker image
       #  run: docker build -t ${{ steps.vars.outputs.tag }} .

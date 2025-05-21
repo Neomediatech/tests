@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch: # Permette di avviare il workflow manualmente dalla UI di GitHub
 
 jobs:
   build-and-scan:
@@ -32,5 +33,3 @@ jobs:
       - name: show dir content
         run: ls -lah ; pwd ; echo $GITHUB_WORKSPACE ; echo $RUNNER_TEMP
 
-  copy-file-to-another-repo:
-    uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main

@@ -32,5 +32,5 @@ jobs:
       - name: show dir content
         run: ls -lah ; pwd ; echo $GITHUB_WORKSPACE ; echo $RUNNER_TEMP
 
-      - name: use another actions from remote repo
-        uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@latest
+  copy-file-to-another-repo:
+    uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@latest

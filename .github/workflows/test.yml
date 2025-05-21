@@ -33,4 +33,4 @@ jobs:
         run: ls -lah ; pwd ; echo $GITHUB_WORKSPACE ; echo $RUNNER_TEMP
 
   copy-file-to-another-repo:
-    uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@latest
+    uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main

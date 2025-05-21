@@ -1,4 +1,4 @@
-name: Tests
+name: Copy file
 
 on:
   workflow_dispatch: # Permette di avviare il workflow manualmente dalla UI di GitHub

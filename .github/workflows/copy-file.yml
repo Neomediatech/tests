@@ -13,9 +13,11 @@ jobs:
 
       # Simula la creazione di un file da caricare.
       - name: Create example file to upload
+        id: vars
         env:
           FILE_TO_COPY: test_file.txt
         run: |
+          echo "file_to_copy=$FILE_TO_COPY" >> $GITHUB_OUTPUT
           echo "File coming from ${{ github.repository }}" > $FILE_TO_COPY
           echo "Data e ora: $(date)" >> $FILE_TO_COPY
           ls -lah
@@ -23,4 +25,4 @@ jobs:
   copy-file-to-another-repo:
     uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
     with:
-      filename: "$FILE_TO_COPY"
+      filename: "${{ steps.vars.outputs.file_to_copy }}"

@@ -12,6 +12,7 @@ jobs:
     outputs:
       # Define an output for this job
       file_to_copy_output: ${{ steps.set-filename.outputs.file_to_copy }}
+      uploaded-file-id: ${{ steps.upload-step.outputs.artifact-id }}
 
     steps:
       - name: Checkout current repository (Repository A)
@@ -30,14 +31,19 @@ jobs:
         run: echo "file_to_copy=${{ env.FILE_TO_COPY }}" >> $GITHUB_OUTPUT
 
       - name: Upload File
+        id: upload-step
         uses: actions/upload-artifact@v4
         with:
           name: uploaded-file
           path: ${{ env.FILE_TO_COPY }}
+          overwrite: true
+          compression-level: 0
+          retention-days: 1
 
   copy-file-to-another-repo:
     needs: [create-file]
     uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
     with:
-      filename: ${{ needs.create-file.outputs.file_to_copy_output }}
+      filename: ${{ needs.create-file.outputs.uploaded-file-id }}
+      #filename: ${{ needs.create-file.outputs.file_to_copy_output }}
       #  run: echo "filename ${{ needs.create-file.vars.outputs.file_to_copy }}"

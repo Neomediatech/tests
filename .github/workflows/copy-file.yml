@@ -22,8 +22,8 @@ jobs:
           echo "Data e ora: $(date)" >> $FILE_TO_COPY
           ls -lah
 
-      - name: Copy file to another repo
-  #copy-file-to-another-repo:
-        uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
-        with:
-          filename: "${{ steps.vars.outputs.file_to_copy }}"
+  copy-file-to-another-repo:
+    needs: [create-file]
+    uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
+    with:
+      filename: "${{ needs.create-file.vars.outputs.file_to_copy }}"

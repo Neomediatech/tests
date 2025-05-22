@@ -22,3 +22,5 @@ jobs:
 
   copy-file-to-another-repo:
     uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
+    with:
+      filename: "$FILE_TO_COPY"

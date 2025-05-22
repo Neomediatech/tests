@@ -24,6 +24,10 @@ jobs:
 
   copy-file-to-another-repo:
     needs: [create-file]
-    uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
-    with:
-      filename: "${{ needs.create-file.vars.outputs.file_to_copy }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: test copy file
+    #uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
+    #with:
+    #  filename: "${{ needs.create-file.vars.outputs.file_to_copy }}"
+        run: echo "filename ${{ needs.create-file.vars.outputs.file_to_copy }}"

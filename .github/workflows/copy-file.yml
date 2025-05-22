@@ -29,6 +29,12 @@ jobs:
         id: set-filename # Give this step an ID
         run: echo "file_to_copy=${{ env.FILE_TO_COPY }}" >> $GITHUB_OUTPUT
 
+      - name: Upload File
+        uses: actions/upload-artifact@v2
+        with:
+          name: uploaded-file
+          path: $FILE_TO_COPY
+
   copy-file-to-another-repo:
     needs: [create-file]
     uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main

@@ -44,6 +44,6 @@ jobs:
     needs: [create-file]
     uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
     with:
-      filename: ${{ needs.create-file.outputs.uploaded-file-id }}
-      #filename: ${{ needs.create-file.outputs.file_to_copy_output }}
+      file_id: ${{ needs.create-file.outputs.uploaded-file-id }}
+      filename: ${{ needs.create-file.outputs.file_to_copy_output }}
       #  run: echo "filename ${{ needs.create-file.vars.outputs.file_to_copy }}"

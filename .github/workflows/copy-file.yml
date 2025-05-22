@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: uploaded-file
-          path: $FILE_TO_COPY
+          path: ${{ env.FILE_TO_COPY }}
 
   copy-file-to-another-repo:
     needs: [create-file]

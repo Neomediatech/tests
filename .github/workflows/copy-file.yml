@@ -3,6 +3,9 @@ name: Copy file
 on:
   workflow_dispatch: # Permette di avviare il workflow manualmente dalla UI di GitHub
 
+env:
+  FILE_TO_COPY: "test_file.txt"
+
 jobs:
   create-file:
     runs-on: ubuntu-latest
@@ -13,9 +16,6 @@ jobs:
 
       # Simula la creazione di un file da caricare.
       - name: Create example file to upload
-        id: vars
-        env:
-          FILE_TO_COPY: test_file.txt
         run: |
           echo "file_to_copy=$FILE_TO_COPY" >> $GITHUB_OUTPUT
           echo "File coming from ${{ github.repository }}" > $FILE_TO_COPY
@@ -24,10 +24,7 @@ jobs:
 
   copy-file-to-another-repo:
     needs: [create-file]
-    runs-on: ubuntu-latest
-    steps:
-      - name: test copy file
-    #uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
-    #with:
-    #  filename: "${{ needs.create-file.vars.outputs.file_to_copy }}"
-        run: echo "filename ${{ needs.create-file.vars.outputs.file_to_copy }}"
+    uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main
+    with:
+      filename: "$FILE_TO_COPY"
+      #  run: echo "filename ${{ needs.create-file.vars.outputs.file_to_copy }}"

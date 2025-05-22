@@ -4,5 +4,21 @@ on:
   workflow_dispatch: # Permette di avviare il workflow manualmente dalla UI di GitHub
 
 jobs:
+  create-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current repository (Repository A)
+        uses: actions/checkout@v4 # Usa la versione più recente
+
+      # Simula la creazione di un file da caricare.
+      - name: Create example file to upload
+        env:
+          FILE_TO_COPY: test_file.txt
+        run: |
+          echo "File coming from ${{ github.repository }}" > $FILE_TO_COPY
+          echo "Data e ora: $(date)" >> $FILE_TO_COPY
+          ls -lah
+
   copy-file-to-another-repo:
     uses: Neomediatech/docker-images-scan-reports/.github/workflows/copy-file-to-another-repo.yml@main

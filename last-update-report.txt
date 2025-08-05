@@ -1,1 +1,2 @@
 mar 5 ago 2025, 19:19:56, UTC --- ghcr.io/neomediatech/tests:useless UPDATED (image build needed: true)
+mar 5 ago 2025, 19:20:19, UTC --- ghcr.io/neomediatech/tests:latest UPDATED (image build needed: true)

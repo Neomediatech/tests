@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   build-image:
-    uses: Neomediatech/gh-workflows/.github/workflows/build-docker-image-bulk.yml@main
+    uses: Neomediatech/gh-workflows/.github/workflows/build-docker-image-bulk-test.yml@main
     with:
       base-image: ubuntu:24.04
       force-build: "${{ github.event.inputs.force-build }}"

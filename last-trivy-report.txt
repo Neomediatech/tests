@@ -1,2 +1,2 @@
 -----------------------------------
-mar 5 ago 2025, 18:25:18, UTC --- ghcr.io/neomediatech/tests:latest NOT SCANNED
+mar 5 ago 2025, 18:34:11, UTC --- ghcr.io/neomediatech/tests:useless NOT SCANNED

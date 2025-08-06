@@ -6,3 +6,56 @@ mer 6 ago 2025, 10:09:36, UTC --- ghcr.io/neomediatech/tests:useless UPDATED
 mer 6 ago 2025, 10:09:57, UTC --- ghcr.io/neomediatech/tests:latest UPDATED
 mer 6 ago 2025, 12:20:54, UTC --- ghcr.io/neomediatech/tests:useless UPDATED (image build needed: true)
 mer 6 ago 2025, 12:21:14, UTC --- ghcr.io/neomediatech/tests:latest UPDATED (image build needed: true)
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------
+===============================================================
+│            │                │          │        │                   │               │                                                          │
+│            │                │          │        │                   │               │                                                          │
+┌─────────────────────────────────────────────────────────────────┬────────┬─────────────────┬─────────┐
+┌────────────────────────────────────────────────────┬────────┬─────────────────┬─────────┐
+┌────────────┬────────────────┬──────────┬────────┬───────────────────┬───────────────┬──────────────────────────────────────────────────────────┐
+└─────────────────────────────────────────────────────────────────┴────────┴─────────────────┴─────────┘
+└────────────────────────────────────────────────────┴────────┴─────────────────┴─────────┘
+└────────────┴────────────────┴──────────┴────────┴───────────────────┴───────────────┴──────────────────────────────────────────────────────────┘
+├─────────────────────────────────────────────────────────────────┼────────┼─────────────────┼─────────┤
+├────────────────────────────────────────────────────┼────────┼─────────────────┼─────────┤
+├────────────┤                │          │        │                   │               │                                                          │
+├────────────┼────────────────┼──────────┼────────┼───────────────────┼───────────────┼──────────────────────────────────────────────────────────┤
+- '0': Clean (no security findings detected)
+- '0': Clean (no security findings detected)
+│            │                │          │        │                   │               │ don't abort as expected                                  │
+For OSS Maintainers: VEX Notice
+ghcr.io/neomediatech/tests:latest (alpine 3.22.0_alpha20250108)
+│ ghcr.io/neomediatech/tests:latest (alpine 3.22.0_alpha20250108) │ alpine │        2        │    -    │
+│ ghcr.io/neomediatech/tests:useless (alpine 3.22.1) │ alpine │        0        │    -    │
+│            │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2024-12797               │
+If you're an OSS maintainer and Trivy has detected vulnerabilities in your project that you believe are not actually exploitable, consider issuing a VEX (Vulnerability Exploitability eXchange) statement.
+Learn more and start using VEX: https://trivy.dev/v0.64/docs/supply-chain/vex/repo#publishing-vex-documents
+Legend:
+Legend:
+│ libcrypto3 │ CVE-2024-12797 │ HIGH     │ fixed  │ 3.3.2-r4          │ 3.3.3-r0      │ openssl: RFC7250 handshakes with unauthenticated servers │
+│  Library   │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version │                          Title                           │
+│ libssl3    │                │          │        │                   │               │                                                          │
+mer 6 ago 2025, 14:20:33, UTC --- ghcr.io/neomediatech/tests:useless done (image build needed: true)
+mer 6 ago 2025, 14:21:46, UTC --- ghcr.io/neomediatech/tests:latest done (image build needed: true)
+- '-': Not scanned
+- '-': Not scanned
+Report Summary
+Report Summary
+STATUS=✅ tests
+STATUS=✅ tests
+│                             Target                              │  Type  │ Vulnerabilities │ Secrets │
+│                       Target                       │  Type  │ Vulnerabilities │ Secrets │
+To disable this notice, set the TRIVY_DISABLE_VEX_NOTICE environment variable.
+Total: 2 (HIGH: 2, CRITICAL: 0)
+VEX allows you to communicate the actual status of vulnerabilities in your project, improving security transparency and reducing false positives for your users.
